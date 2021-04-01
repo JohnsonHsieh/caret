@@ -8,11 +8,24 @@
 \usage{
 preProcess(x, ...)
 
-\method{preProcess}{default}(x, method = c("center", "scale"),
-  thresh = 0.95, pcaComp = NULL, na.remove = TRUE, k = 5,
-  knnSummary = mean, outcome = NULL, fudge = 0.2, numUnique = 3,
-  verbose = FALSE, freqCut = 95/5, uniqueCut = 10, cutoff = 0.9,
-  rangeBounds = c(0, 1), ...)
+\method{preProcess}{default}(
+  x,
+  method = c("center", "scale"),
+  thresh = 0.95,
+  pcaComp = NULL,
+  na.remove = TRUE,
+  k = 5,
+  knnSummary = mean,
+  outcome = NULL,
+  fudge = 0.2,
+  numUnique = 3,
+  verbose = FALSE,
+  freqCut = 95/5,
+  uniqueCut = 10,
+  cutoff = 0.9,
+  rangeBounds = c(0, 1),
+  ...
+)
 
 \method{predict}{preProcess}(object, newdata, ...)
 }
@@ -165,7 +178,7 @@ The function will throw an error of any numeric variables in \code{x} has
 less than two unique values unless either \code{method = "zv"} or
 \code{method = "nzv"} are invoked.
 
-Non-numeric data will not be pre-processed and there values will be in the
+Non-numeric data will not be pre-processed and their values will be in the
 data frame produced by the \code{predict} function. Note that when PCA or
 ICA is used, the non-numeric columns may be in different positions when
 predicted.
